@@ -1,30 +1,6 @@
-// 2. Take a function that accepts a function as a parameter (also known as callback function). 
 
-function callbackFunc(){
-    console.log("Calling the callback function");
-    return 5;
-   }
+const string = "sadasasd";
 
-function test(callback){
-     callback();
-}
-
-console.log(test(callbackFunc)); // this works
-
-// console.log(test(callbackFunc()));   
-// here we are getting error as callback is not a function because we are passing callback as a argument and not a fucntion
-
-console.log(test(()=> callbackFunc()));  // this works
-
-
-
-// What happens when you return callback() from the test function?
-// What happens when you return callback from the test function?
-
-function test1(callback){
-    return callback();
-}
-
-console.log(test1(callbackFunc));
-
-console.log(test1(callbackFunc));
+console.log("length of the String is : ", string.length)
+console.log("accessing element beyond length of the string : ", string.at(45));
+console.log("accessing elements using negative index : ", "string".at(-1));
