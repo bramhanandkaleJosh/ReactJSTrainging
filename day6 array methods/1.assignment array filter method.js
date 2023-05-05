@@ -50,4 +50,10 @@ const objectArray = [{
     "date_of_birth": "2018/09/01"
     }] ;
 
-    
+
+const array = [1, 2, "4", 3, 7, "10"];
+const calculate = n => (typeof n === "number") ? true : (n * n);
+const data1 = array.map(n => calculate(n));
+const data2 = array.filter(n => calculate(n));
+console.log("data1: ", data1);
+console.log("data2: ", data2);
