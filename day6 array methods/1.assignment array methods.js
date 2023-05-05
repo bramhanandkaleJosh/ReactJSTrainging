@@ -12,18 +12,15 @@ const mapByEmail = () => {
 console.log("printing array with email only using map function : ",mapByEmail());
 
 // sort by date
-const sortByDob = () => {
-    return objectArray.sort( (a,b) => {
-        return new Date(a.date_of_birth) - new Date(b.date_of_birth);
-    });
-}
+const sortByDob = () =>  objectArray.sort( (a,b) => new Date(a.date_of_birth) - new Date(b.date_of_birth));
+
 console.log("printing array sorted by date of birth : ", sortByDob());
 
 // sort by name
-// const sortByName = () => {
-//     return objectArray.sort( (a,b) => a.first_name > b.first_name ? 1 : (b.first_name > a.first_name ? -1 : 0));
-// }
-// console.log("printing array sorted by firstName : ", sortByName());
+const sortByName = () => {
+     return objectArray.sort( (a,b) => a.first_name > b.first_name ? 1 : (b.first_name > a.first_name ? -1 : 0));
+ }
+ console.log("printing array sorted by firstName : ", sortByName());
 
 
 // get object by Id
