@@ -1,0 +1,26 @@
+// Write a function mapBy to convert an array of objects into an object mapped by the specified key:
+ 
+ let users = [{
+"id": 1,
+"first_name": "Nicki",
+"email": "ncrozier0@squarespace.com",
+"date_of_birth": "2009/05/09"
+}, {
+"id": 2,
+"first_name": "Raychel",
+"email": "rmcgrady1@cpanel.net",
+"date_of_birth": "1996/11/05"
+}];
+
+
+// mapBy(users, “first_name”) 
+
+function mapBy(object){
+const mappedObject ={};
+for (const element of object) {
+    Object.defineProperty(mappedObject, element.first_name, {value : element});
+}
+return mappedObject;
+}
+
+console.log("new mapped array of object : ", mapBy(users));
