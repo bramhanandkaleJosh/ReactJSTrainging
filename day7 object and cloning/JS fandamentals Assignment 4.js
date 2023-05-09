@@ -34,6 +34,7 @@ function mergeById(userNames, userEmails) {
 for (let i=0 ; i<userNames.length ; i++) {
     Object.assign( userNames[i], userEmails[i] );
 }
+// todo by id
 return userNames;
 }
 

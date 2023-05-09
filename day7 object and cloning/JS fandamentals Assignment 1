@@ -13,14 +13,17 @@
 }];
 
 
-// mapBy(users, “first_name”) 
+// mapBy(users, “first_name”) // todo property name
 
-function mapBy(object){
+function mapBy(object, propertyName){
 const mappedObject ={};
 for (const element of object) {
-    Object.defineProperty(mappedObject, element.first_name, {value : element});
+    Object.defineProperty(mappedObject, element[propertyName], {value : element});
 }
 return mappedObject;
 }
 
-console.log("new mapped array of object : ", mapBy(users));
+console.log("new mapped array of object : ", mapBy(users, 'first_name'));
+
+
+// try with template string

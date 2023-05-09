@@ -13,17 +13,17 @@ let users = [{
 "date_of_birth": "1996/11/05",
   'gender':'Female'
 }, {
+  "id": 4,
+  "first_name": "Demetris",
+  "email": "abraiden3@canalblog.com",
+  "date_of_birth": "2012/05/23",
+    'gender':'Female'
+  }, {
 "id": 3,
 "first_name": "Demetris",
 "email": "dkilshall2@elpais.com",
 "date_of_birth": "2018/12/31",
 'gender':'Male'
-}, {
-"id": 4,
-"first_name": "Amata",
-"email": "abraiden3@canalblog.com",
-"date_of_birth": "2012/05/23",
-  'gender':'Female'
 }];
 
 
@@ -36,7 +36,9 @@ for (const property of requiredProperties) {
 }
 return groupByObject;
 }
-console.log("printing elements of array grouping by property name of gender : ",groupBy(users, 'gender'));
+console.log("printing elements of array grouping by property name of gender : ",groupBy(users, 'first_name'));
+
+// todo how its result will be ordered
 
 
 // desired output is as below
