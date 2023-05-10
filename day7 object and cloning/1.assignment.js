@@ -21,3 +21,9 @@ console.log("intial value of address details field : ",copyObject.address.detail
 copyObject.address.details[0]="5";
 
 console.log("updated value of address details field : ",copyObject.address.details[0]);
+
+const func = (u) => {
+    return  5 > u ;
+}
+
+console.log("printing given function : ", [4,5,5656,6757,3,7].filter(func));
