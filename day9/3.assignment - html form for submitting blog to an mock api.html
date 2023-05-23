@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog Submission</title>
+</head>
+<body>
+  <h1>Submit a Blog</h1>
+
+  <form id="blogForm">
+    <label for="title">Title:</label>
+    <input type="text" id="title" required><br><br>
+
+    <label for="content">Content:</label><br>
+    <textarea id="content" rows="4" required></textarea><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    // Submit form event handler
+    document.getElementById('blogForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Get form values
+      const title = document.getElementById('title').value;
+      const content = document.getElementById('content').value;
+
+      // Create blog object
+      const blog = {
+      "title": title,
+      "description":content
+      };
+
+      // Send blog data to the API
+      sendBlogData(blog)
+        .then(response => {
+          console.log('Blog submitted successfully:', response);
+          // Perform any desired actions after successful submission
+        })
+        .catch(error => {
+          console.error('Error submitting blog:', error);
+          // Perform any desired error handling
+        });
+    });
+
+    // Function to send blog data to the API
+    function sendBlogData(blog) {
+      return new Promise((resolve, reject) => {
+        // Mock API endpoint URL
+        const apiUrl = 'https://dummyjson.com/products/add';
+
+        // Make a POST request to the API
+        fetch(apiUrl, {
+          method: 'POST',
+          headers: {  'Content-Type': 'application/json'  },
+          body: JSON.stringify(blog)
+        })
+        .then(response => {
+         console.log("logging the response in console : ",response)
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(data => {
+          resolve(data); // Resolve with the API response
+        })
+        .catch(error => {
+          reject(error); // Reject with the error
+        });
+      });
+    }
+  </script>
+</body>
+</html>
