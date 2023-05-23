@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YouTube Video Playback Speed</title>
+</head>
+<body>
+  <!-- YouTube player container -->
+  <div id="player"></div>
+
+  <button id="(() => document.getElementsByClassName('video-stream html5-main-video')[0].playbackRate = 10)">up speed</button>
+  <button id="(() => document.getElementsByClassName('video-stream html5-main-video')[0].playbackRate = 2.5)">down speed</button>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    // YouTube iframe API callback
+    function onYouTubeIframeAPIReady() {
+      // Create a new YouTube player
+      const player = new YT.Player('player', {
+        height: '360',
+        width: '640',
+        videoId: 'UJoZjKx0SgU', // Replace with your video ID
+        playerVars: {
+          autoplay: 0,
+          controls: 1,
+          rel: 0
+        }
+      });
+
+      // Button click event handler
+      const button = document.getElementById('changeSpeedButton');
+      button.addEventListener('click', () => {
+        // Change playback speed to 10x
+        player.setPlaybackRate(10);
+      });
+    }
+  </script>
+</body>
+</html>
